@@ -56,12 +56,13 @@ export default {
 /deep/ img[alt="webpack"] {
   @apply w-64;
 }
+
 /deep/ img[alt="jamstack workflow"] {
-  @apply h-full;
+  @apply h-screen;
 }
 
 /deep/ pre {
-  @apply h-full px-16;
+  @apply h-full px-16 max-w-full;
 }
 
 /deep/ img[alt="jamstack logo"] {
@@ -86,5 +87,9 @@ export default {
 
 /deep/ td {
   @apply border px-4 py-2;
+}
+
+/deep/ blockquote {
+  @apply text-3xl w-1/2 text-gray-700;
 }
 </style>
