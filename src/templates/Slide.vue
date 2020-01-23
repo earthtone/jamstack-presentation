@@ -1,7 +1,7 @@
 <template>
   <section>
     <global-events @keydown.right="next" @keydown.left="prev"/>
-    <article v-html="$page.slide.content" />
+    <article v-html="$page.slide.content" class="flex flex-col items-center justify-center w-screen h-full min-h-screen p-6 text-gray-800 bg-orange-100"/>
   </section>
 </template>
 <page-query>
@@ -12,7 +12,7 @@
       content
     }
 
-    slides: allSlide {
+    slides: allSlide (order:ASC){
       edges {
         node {
           path
@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     slides () {
-      return this.$page.slides.edges.map(({ node }) => node.path)
+      return this.$page.slides.edges.map(({ node }) => node.path).sort((a,b) => a > b)
     },
     currentIndex () {
       return this.slides.findIndex(p => p === this.$page.slide.path)
@@ -48,3 +48,43 @@ export default {
   }
 }
 </script>
+<style scoped>
+/deep/ p {
+  @apply w-full flex justify-center;
+}
+
+/deep/ img[alt="webpack"] {
+  @apply w-64;
+}
+/deep/ img[alt="jamstack workflow"] {
+  @apply h-full;
+}
+
+/deep/ pre {
+  @apply h-full px-16;
+}
+
+/deep/ img[alt="jamstack logo"] {
+  @apply w-screen;
+}
+
+/deep/ h2 {
+  @apply text-4xl uppercase;
+}
+
+/deep/ ul {
+  @apply list-inside list-disc my-12;
+}
+
+/deep/ li {
+  @apply text-2xl;
+}
+
+/deep/ table {
+  @apply table-auto text-6xl;
+}
+
+/deep/ td {
+  @apply border px-4 py-2;
+}
+</style>
