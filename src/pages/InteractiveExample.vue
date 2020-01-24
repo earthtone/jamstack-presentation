@@ -1,5 +1,5 @@
 <template>
-  <div id="blob">
+  <div id="blob" class="w-1/3 mx-auto mt-64">
   <svg width="200" height="200">
     <polygon :points="points"></polygon>
     <circle cx="100" cy="100" r="90"></circle>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import {TweenMax, TweenLite} from 'gsap'
+
 function valueToPoint (value, index, total) {
   var x     = 0
   var y     = -value * 0.9

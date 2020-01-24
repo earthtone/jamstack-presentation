@@ -70,7 +70,7 @@ export default {
 }
 
 /deep/ h2 {
-  @apply text-4xl uppercase;
+  @apply text-6xl uppercase;
 }
 
 /deep/ ul {
@@ -78,7 +78,7 @@ export default {
 }
 
 /deep/ li {
-  @apply text-2xl;
+  @apply text-4xl;
 }
 
 /deep/ table {
@@ -90,6 +90,17 @@ export default {
 }
 
 /deep/ blockquote {
-  @apply text-3xl w-1/2 text-gray-700;
+  @apply text-6xl w-1/2 text-gray-600;
 }
+
+/deep/ a:hover {
+  @apply underline;
+}
+/deep/  img[alt="nuxt logo"] {
+  @apply w-64;
+}
+/deep/ img[alt="confusion"] {
+  @apply w-3/4;
+}
+
 </style>
